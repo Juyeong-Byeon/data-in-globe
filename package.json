@@ -1,0 +1,24 @@
+{
+  "name": "data-in-globe",
+  "version": "1.0.0",
+  "description": "Simple and easy way to manage global states.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wndudqus/data-in-globe.git"
+  },
+  "keywords": [
+    "data",
+    "gloabl",
+    "store"
+  ],
+  "author": "juyeon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wndudqus/data-in-globe/issues"
+  },
+  "homepage": "https://github.com/wndudqus/data-in-globe#readme"
+}
