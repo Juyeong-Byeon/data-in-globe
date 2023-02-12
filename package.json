@@ -20,5 +20,6 @@
   "bugs": {
     "url": "https://github.com/wndudqus/data-in-globe/issues"
   },
-  "homepage": "https://github.com/wndudqus/data-in-globe#readme"
+  "homepage": "https://github.com/wndudqus/data-in-globe#readme",
+  "dependencies": {}
 }
