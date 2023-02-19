@@ -19,13 +19,23 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      
+      - name: Checkout  
+        uses: actions/checkout@v2
+      
       - name: Setup Node.js
         uses: actions/setup-node@v3
+      
         with:
           node-version: '16'
-          
-      - name: install dependency
+
+      - name: Install dependencys
         run: yarn install
+
+      - name: Run tests
+        run: yarn run test
+      
+      - name: Build project
+        run: yarn run build 

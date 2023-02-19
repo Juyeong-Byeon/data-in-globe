@@ -1,0 +1,6 @@
+{
+    "testMatch": [
+        "<rootDir>/**/*.test.(js|ts)",
+        "<rootDir>/(tests/unit/**/*.spec.(js|ts)|**/__tests__/*.(js|ts))"
+    ]
+}
