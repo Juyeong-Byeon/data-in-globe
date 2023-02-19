@@ -4,7 +4,8 @@
   "description": "Simple and easy way to manage global states.",
   "scripts": {
     "test": "jest",
-    "build": "tsc"
+    "build": "tsc",
+    "lint": "eslint && tsc --noEmit &&prettier --check **/src/**"
   },
   "repository": "git+https://github.com/Juyeong-Byeon/data-in-globe.git",
   "keywords": [
