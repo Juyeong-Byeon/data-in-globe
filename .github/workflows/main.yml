@@ -27,12 +27,14 @@ jobs:
       
       - name: Setup Node.js
         uses: actions/setup-node@v3
-      
         with:
           node-version: '16'
 
       - name: Install dependencys
         run: yarn install
+
+      - name: Run lint
+        run: yarn run lint
 
       - name: Run tests
         run: yarn run test
