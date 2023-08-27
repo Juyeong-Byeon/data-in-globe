@@ -1,5 +1,15 @@
-const a = "19";
+class GlobalState<State> {
+  constructor(private state: State) {
+    //
+  }
 
-const b = () => {};
+  getState() {
+    return Object.freeze(this.state);
+  }
 
-export {};
+  setState(state: State) {
+    this.state = state;
+  }
+}
+
+export { GlobalState };
