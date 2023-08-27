@@ -8,7 +8,7 @@
     "clean": "rm -rf ./dist/*",
     "build:esm": "tsc -b tsconfig.esm.json",
     "build:cjs": "tsc -b tsconfig.cjs.json",
-    "lint": "eslint&&tsc --noEmit&&prettier --check **/src/**",
+    "lint": "eslint&&prettier --check **/src/**",
     "prepack": "npm run build",
     "semantic-release": "semantic-release"
   },
