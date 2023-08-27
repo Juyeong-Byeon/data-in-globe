@@ -55,7 +55,7 @@
     "./src/**/*"
   ],
   "publishConfig": {
-    "access": "restricted"
+    "access": "public"
   },
   "release": {
     "branches": ["main"]
