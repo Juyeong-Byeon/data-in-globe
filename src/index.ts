@@ -1,3 +1,5 @@
+import { useSyncExternalStore } from "use-sync-external-store/shim";
+
 class GlobalState<State> {
   private listeners: Set<Function> = new Set();
   constructor(private state: State) {
@@ -19,4 +21,11 @@ class GlobalState<State> {
   }
 }
 
-export { GlobalState };
+function useGlobalState<State>(globalState: GlobalState<State>) {
+  return useSyncExternalStore<State>(
+    globalState.subscribe,
+    globalState.getState()
+  );
+}
+
+export { GlobalState, useGlobalState };

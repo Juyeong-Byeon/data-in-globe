@@ -27,9 +27,12 @@
     "url": "https://github.com/Juyeong-Byeon/data-in-globe/issues"
   },
   "homepage": "https://github.com/Juyeong-Byeon/data-in-globe#readme",
-  "dependencies": {},
+  "dependencies": {
+    "use-sync-external-store": "^1.2.0"
+  },
   "devDependencies": {
     "@types/jest": "^29.4.0",
+    "@types/react": "^18.2.21",
     "eslint": "^8.34.0",
     "eslint-plugin-prettier": "^4.2.1",
     "jest": "^29.4.2",
@@ -58,6 +61,11 @@
     "access": "public"
   },
   "release": {
-    "branches": ["main"]
+    "branches": [
+      "main"
+    ]
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
   }
 }
