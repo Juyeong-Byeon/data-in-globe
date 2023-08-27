@@ -1,4 +1,5 @@
 class GlobalState<State> {
+  private listeners: Set<Function> = new Set();
   constructor(private state: State) {
     //
   }
@@ -9,6 +10,12 @@ class GlobalState<State> {
 
   setState(state: State) {
     this.state = state;
+    this.listeners.forEach((listener) => listener());
+  }
+
+  subscribe(listener: Function) {
+    this.listeners.add(listener);
+    return () => this.listeners.delete(listener);
   }
 }
 
