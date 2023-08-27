@@ -1,16 +1,16 @@
 import { useSyncExternalStore } from "use-sync-external-store/shim";
 
-class GlobalState<State> {
+class GlobalData<Data> {
   private listeners: Set<Function> = new Set();
-  constructor(private state: State) {
+  constructor(private state: Data) {
     //
   }
 
-  getState() {
+  getData() {
     return Object.freeze(this.state);
   }
 
-  setState(state: State) {
+  setData(state: Data) {
     this.state = state;
     this.listeners.forEach((listener) => listener());
   }
@@ -21,11 +21,11 @@ class GlobalState<State> {
   }
 }
 
-function useGlobalState<State>(globalState: GlobalState<State>) {
+function useGlobalData<State>(globalState: GlobalData<State>) {
   return useSyncExternalStore<State>(
     globalState.subscribe,
-    globalState.getState
+    globalState.getData
   );
 }
 
-export { GlobalState, useGlobalState };
+export { GlobalData, useGlobalData };
