@@ -24,7 +24,7 @@ class GlobalState<State> {
 function useGlobalState<State>(globalState: GlobalState<State>) {
   return useSyncExternalStore<State>(
     globalState.subscribe,
-    globalState.getState()
+    globalState.getState
   );
 }
 
