@@ -10,7 +10,6 @@
       "declarationMap": true,
       "allowSyntheticDefaultImports": true,
       "outDir": "./dist", /* Specify an output folder for all emitted files. */
-      "declarationDir": ".",
     },
     "files": ["./src/index.ts"],
     "exclude": [
