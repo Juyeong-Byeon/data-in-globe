@@ -1,17 +1,20 @@
+import { useCallback } from "react";
 import { useSyncExternalStore } from "use-sync-external-store/shim";
+import cloneDeep from "lodash/cloneDeep";
 
 class GlobalData<Data> {
   private listeners: Set<Function> = new Set();
-  constructor(private state: Data) {
-    //
+  private data: Readonly<Data>;
+  constructor(data: Data) {
+    this.data = Object.freeze(cloneDeep(data));
   }
 
   getData() {
-    return Object.freeze(this.state);
+    return this.data;
   }
 
   setData(state: Data) {
-    this.state = state;
+    this.data = Object.freeze(cloneDeep(state));
     this.listeners.forEach((listener) => listener());
   }
 
@@ -21,11 +24,15 @@ class GlobalData<Data> {
   }
 }
 
-function useGlobalData<State>(globalState: GlobalData<State>) {
-  return useSyncExternalStore<State>(
-    globalState.subscribe,
-    globalState.getData
-  );
+function useGlobalData<State>(
+  globalData: GlobalData<State>
+): [Readonly<State>, (state: State) => void] {
+  const data = useSyncExternalStore(globalData.subscribe, globalData.getData);
+  const setData = useCallback(globalData.setData.bind(globalData), [
+    globalData,
+  ]);
+
+  return [data, setData];
 }
 
 export { GlobalData, useGlobalData };
