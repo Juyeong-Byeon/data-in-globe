@@ -1,6 +1,7 @@
 {
   "name": "data-in-globe",
   "version": "0.0.0-development",
+  "type": "module",
   "description": "Simple and easy way to manage global states.",
   "scripts": {
     "test": "jest",
@@ -45,20 +46,22 @@
   },
   "main": ".dist/index.js",
   "exports": {
+    "./package.json": "./package.json",
     ".": {
       "import": {
         "types": "./dist/esm/types/index.d.ts",
         "default": "./dist/esm/index.js"
       },
       "require": {
-        "types": "./dist/cjs/types/index.d.ts",
-        "default": "./dist/cjs/index.js"
+        "types": "./dist/cjs/types/index.d.cts",
+        "default": "./dist/cjs/index.cjs"
       }
     }
   },
   "files": [
     "./dist/**/*",
-    "./src/**/*"
+    "./src/**/*",
+    "*.d.ts"
   ],
   "publishConfig": {
     "access": "public"
