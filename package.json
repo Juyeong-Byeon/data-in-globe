@@ -28,10 +28,12 @@
   },
   "homepage": "https://github.com/Juyeong-Byeon/data-in-globe#readme",
   "dependencies": {
+    "lodash": "^4.17.21",
     "use-sync-external-store": "^1.2.0"
   },
   "devDependencies": {
     "@types/jest": "^29.4.0",
+    "@types/lodash": "^4.14.197",
     "@types/react": "^18.2.21",
     "@types/use-sync-external-store": "^0.0.3",
     "eslint": "^8.34.0",
@@ -45,11 +47,11 @@
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/esm/index.d.ts",
+        "types": "./dist/esm/types/index.d.ts",
         "default": "./dist/esm/index.js"
       },
       "require": {
-        "types": "./dist/cjs/index.d.ts",
+        "types": "./dist/cjs/types/index.d.ts",
         "default": "./dist/cjs/index.js"
       }
     }
