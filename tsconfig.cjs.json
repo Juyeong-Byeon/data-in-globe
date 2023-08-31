@@ -6,6 +6,5 @@
         "module": "commonjs",
         "moduleResolution": "node",
         "outDir": "./dist/cjs",
-        "declarationDir": "./dist/cjs/types",
     }
 }
