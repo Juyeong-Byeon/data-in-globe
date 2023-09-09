@@ -28,19 +28,30 @@ import and use your global data with useGlobalData
 import { GlobalData, useGlobalData } from "data-in-globe";
 import { globalCounter } from './globalStore'
 
-const [data, setData] = useGlobalData(globalCounter);
+
 
 function App() {
 
-  const onClick = () => {
+const [data, setData, updateData] = useGlobalData(globalCounter);
+
+  const onIncreaseClicked = () => {
     setData({
       count: data.count + 1,
     });
   };
 
+  const onDecreaseClick = () => {
+    updateData((state)=>{
+      // can update in mutable style
+     state.count++
+     return state;
+    });
+  };
+
   return (
     <div className="App">
-      <button onClick={onClick}>click</button>
+      <button onClick={onIncreaseClicked}>increase</button>
+      <button onClick={onDecreaseClick}>decrease</button>
       {data?.count}
     </div>
   );
