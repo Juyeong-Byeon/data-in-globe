@@ -1,7 +1,6 @@
 {
   "name": "data-in-globe",
-  "version": "0.0.0-development",
-  "type": "module",
+  "version": "1.3.0",
   "description": "Simple and easy way to manage global states.",
   "scripts": {
     "test": "jest",
@@ -29,6 +28,7 @@
   },
   "homepage": "https://github.com/Juyeong-Byeon/data-in-globe#readme",
   "dependencies": {
+    "immer": "^10.0.2",
     "lodash": "^4.17.21",
     "use-sync-external-store": "^1.2.0"
   },
@@ -53,8 +53,8 @@
         "default": "./dist/esm/index.js"
       },
       "require": {
-        "types": "./dist/cjs/types/index.d.cts",
-        "default": "./dist/cjs/index.cjs"
+        "types": "./dist/cjs/types/index.d.ts",
+        "default": "./dist/cjs/index.js"
       }
     }
   },
