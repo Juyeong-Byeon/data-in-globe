@@ -1,6 +1,6 @@
-# `data-in-globe` - TypeScript State Management Library
+# `data-in-globe` - Javascript State Management Library
 
-`data-in-globe` is an open-source TypeScript library for managing global state in React applications. It provides a simple and efficient way to share and manage application state across components.
+`data-in-globe` is an open-source javascript library for managing global state in React applications. It provides a simple and efficient way to share and manage application state across components.
 
 ## Installation
 
@@ -117,7 +117,8 @@ function App() {
 
   const increment = () => {
     updateData((state) => {
-      return { count: state.count + 1 };
+      state.count++
+      return state;
     });
   };
 
